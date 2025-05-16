@@ -1,0 +1,66 @@
+<% include ./partial/header %>
+<% include ./partial/studfunction %> 
+<div
+class="col-sm-6"
+style="    flex: 0 0 50%;
+max-width: 60%;
+margin-left: 431px;
+margin-top: -181px;  text-align: -webkit-center;"
+>
+      <div class="thumbnail">
+        <div class="container"
+          style=" position: relative;
+          border-radius: 10px;
+          background-color: #f2f2f2;
+          padding: 20px 0 30px 0;
+          top: 1%;
+          width: 80%;
+          margin: 150px auto;
+          margin-top: 1px;
+          "
+          >
+        
+          <class="container">
+        <h3 style="color: black;">Name: <%=student.name%></h3>
+        <h4 style="color: black;">Type:<%=student.type%></h4>
+        <h4 style="color: black;">Username: <%=student.username%></h4>
+        <h4 style="color: black;">Department:<%=student.department%></h4>
+       
+      </div>
+    </div>
+
+    <div class="container" >
+      <table class="content-table"
+      style="margin: 50px auto;min-width:400px;width: 90%; box-shadow: 0 0 20px rgba(0,0,0,0.15);">
+        <tr  style="background-color: orange; border-radius: 5px 5px 0 0;overflow: hidden;  color: black;;text-align: left; font-weight: bold;"
+        >
+          <th>
+            Subject
+          </th>
+          <th>
+            From
+          </th>
+          <th>To</th>
+          <th>Days</th>
+          <th>Status</th>
+        </tr>
+        <%student.ods.forEach(function(od){%>
+
+        <tr>
+          <td><%=od.subject%></td>
+          <td><%=moment(od.from).format('DD/MM/YYYY')%></td>
+          <td><%=moment(od.to).format('DD/MM/YYYY')%></td>
+          <td><%=od.days%></td>
+          <td><%=od.status%></td>
+        </tr>
+
+        <%})%>
+      </table>
+    </div>
+
+    <% include ./partial/footer %>
+  </div>
+</div>
+
+
+

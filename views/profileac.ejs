@@ -1,0 +1,29 @@
+<% include ./partial/header %><% include ./partial/acfunction %>
+
+    <div class="col-sm-6" style="    flex: 0 0 50%;
+    max-width: 50%;
+    margin-left: 431px;
+    margin-top: -165px; text-align: -webkit-center;">
+      <div class="thumbnail">
+        <center>
+         
+          <img src="https://srec.ac.in/uploads/resource/src/WOea5eyA6k30062017092236srec-logo.jpg" style="width:180px;height:180px;border-radius: 50%;">
+          </center>
+          <h3 style="font-size: 20px;color:black; font-family: 'Times New Roman', Times, serif;"><center>
+            SRI RAMAKRISHNA ENGINEERING COLLEGE.<br>
+            VATTAMALAIPALAYAM,COIMBATORE.
+            <hr style="display: block;">
+          </center></h3>
+          
+        
+        <h1 style="color:black;font-family:'Times New Roman', Times, serif ;"><strong>Name:</strong> <%=ac.name%></h1>
+        <h2 style="color:black;font-family: 'Times New Roman', Times, serif;"><strong>Type:</strong><%=ac.type%></h2>
+        <h2 style="color:black;font-family: 'Times New Roman', Times, serif;"><strong>Username:</strong> <%=ac.username%></h2>
+        <h2 style="color:black;font-family: 'Times New Roman', Times, serif;"><strong>Department:</strong><%=ac.department%></h2>
+      </div>
+      <a class="btn btn-warning" href="/ac/<%=ac._id%>/edit">Edit</a>
+    </div>
+  </div>
+</div>
+
+<% include ./partial/footer %>

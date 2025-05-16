@@ -1,0 +1,76 @@
+<% include ./partial/header %> <% include ./partial/studfunction %> 
+<div
+  class="col-sm-6"
+  style="    flex: 0 0 50%;
+max-width: 60%;
+margin-left: 431px;
+margin-top: -181px;  text-align: -webkit-center;"
+>
+<div class="container" >
+    <table class="content-table"
+    style="margin: 50px auto;min-width:400px;width: 90%; box-shadow: orange;">
+      <tr
+      style="background-color: orange; border-radius: 5px 5px 0 0;overflow: hidden;  color:black;text-align: left; font-weight: bold;"
+      >
+        <th>
+          Subject
+        </th>
+        <th>
+          From
+        </th>
+        <th>To</th>
+        <th>Days</th>
+        <th>AC/TUTOR Status</th>
+        <th>HOD Status</th>
+        <th>Final Status</th>
+        
+      </tr>
+      <%student.ods.forEach(function(od){%>
+
+      <tr>
+        <td><%=od.subject%></td>
+        <td><%=moment(od.from).format('DD/MM/YYYY')%></td>
+        <td><%=moment(od.to).format('DD/MM/YYYY')%></td>
+        <td><%=od.days%></td>
+        <td><%=od.status%></td>
+        <td><%=od.hodstatus%></td>
+        <%if(od.status==="approved" && od.hodstatus==="approved"){%>
+         <%od.finalstatus="approved"%>
+        <%}%>
+        <%if(od.status==="denied" && od.hodstatus==="denied"){%>
+          <%od.finalstatus="denied"%>
+         <%}%>
+         <%if(od.status==="denied" && od.hodstatus==="approved"){%>
+          <%od.finalstatus="denied"%>
+         <%}%>
+         <%if(od.status==="approved" && od.hodstatus==="denied"){%>
+          <%od.finalstatus="denied"%>
+         <%}%>
+        <td><%=od.finalstatus%></td>
+      </tr>
+
+      <%})%>
+    </table>
+  </div>
+  </div>
+  
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<% include
+./partial/footer %>

@@ -1,0 +1,49 @@
+<% include ./partial/header %> <% include ./partial/studfunction %>
+
+<div
+  class="col-sm-6"
+  style="    flex: 0 0 50%;
+max-width: 50%;
+margin-left: 431px;
+margin-top: -181px;  text-align: -webkit-center;"
+>
+<div class="container" >
+  <h1 style="color: black; background-color: orange;font-family: 'Times New Roman', Times, serif;">Apply for onduty here <br><%=student.name%></h1>
+  <form action="/student/<%=student._id%>/apply" method="POST">
+    <div class="form-group">
+    <label for ="purpose">Purpose:</label>
+      <input
+        type="text"
+        placeholder="purpose"
+        name="od[subject]"
+        class="form-control"
+      />
+    </div>
+  
+    <div class="form-group">
+      <label for="from">From:</label>
+      <input
+        type="date"
+        data-date-inline-picker="true"
+        id="from"
+        name="od[from]"
+      />
+    </div>
+    <div class="form-group">
+      <label for="to">To:</label>
+      <input
+        type="date"
+        data-date-inline-picker="true"
+        id="to"
+        name="od[to]"
+      />
+    </div>
+    
+
+    <div class="form-group">
+      <button class="btn btn-lg btn-block btn-default" style="background-color: orange;">Submit</button>
+    </div>
+  </form>
+</div>
+  <% include ./partial/footer %>
+</div>

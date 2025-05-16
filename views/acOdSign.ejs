@@ -1,0 +1,51 @@
+<% include ./partial/header %><% include ./partial/acfunction %>
+<div
+  class="col-sm-6"
+  style="    flex: 0 0 50%;
+    max-width: 60%;
+    margin-left: 431px;
+    margin-top: -165px;  text-align: -webkit-center;"
+>
+  <table
+    class="content-table"
+    style="margin: 50px auto;min-width:400px; box-shadow: 0 0 20px rgba(0,0,0,0.15);"
+  >
+    <tr
+      style="background-color: orange; border-radius: 5px 5px 0 0;overflow: hidden;  color: black;text-align: left; font-weight: bold;"
+    >
+      <th>
+        Student Name
+      </th>
+      <th>
+        From
+      </th>
+      <th>To</th>
+      <th>Days</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+    <%students.forEach(function(student){%> <% if(student.ods.length>0){%>
+    <tr>
+      <th><%=student.name%></th>
+      <%student.ods.forEach(function(od){%>
+      <td><%=moment(od.from).format('DD/MM/YYYY')%></td>
+      <td><%=moment(od.to).format('DD/MM/YYYY')%></td>
+      <td><%=od.days%></td>
+      <td><%=od.status%></td>
+
+      <td>
+        <%if(od.status==="pending"){%>
+        <a
+          href="/ac/<%=ac.id%>/od/<%=student.id%>/info"
+          class="btn btn-block btn-success"
+          style="background-color: orange;"
+          >more info</a
+        >
+        <%}%>
+      </td>
+      <%})}%> <%})%>
+    </tr>
+  </table>
+</div>
+
+<% include ./partial/footer %>

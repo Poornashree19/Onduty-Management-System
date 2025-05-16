@@ -1,0 +1,80 @@
+<% include ./partial/header %>
+<div
+  class="container"
+  style=" position: relative;
+border-radius: 10px;
+background-color:whitesmoke;
+padding: 20px 0 30px 0;
+width: 30%;
+margin: 150px auto;
+
+"
+>
+  <form action="/student/login" method="POST">
+    <div class="row">
+      <div class="col">
+        <center>
+        <img src="https://srec.ac.in/uploads/resource/src/WOea5eyA6k30062017092236srec-logo.jpg" style="width:180px;height:180px;border-radius: 50%;">
+        </center>
+        <h3 style="font-size: 20px;color:black; font-family: 'Times New Roman', Times, serif;"><center>
+          SRI RAMAKRISHNA ENGINEERING COLLEGE.<br>
+          VATTAMALAIPALAYAM,COIMBATORE.
+          <hr>
+        </center></h3>
+        <h2 style="    text-align: center;
+             color:black;
+            background-color:orange;
+            font-family: 'Times New Roman', Times, serif;
+            padding:15px;"> 
+          Login
+        </h2>
+        <div class="form-group">
+          <label>Username</label>
+          <input
+            class="form-control"
+            type="text"
+            name="username"
+            placeholder="rollno"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input
+            class="form-control"
+            type="password"
+            name="password"
+            placeholder="password"
+          />
+        </div>
+
+        <div class="form-group">
+          <button
+            type="submit"
+            class="btn btn-lg btn-rounded btn-primary btn-block " 
+            style="background-color:orange;"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <a
+    style="width: 100%;
+  padding: 12px;
+  border: none;
+  font-display: black;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;"
+    href="/"
+    >Back</a
+  >
+</div>
+
+<% include ./partial/footer %>
